@@ -21,7 +21,7 @@ var attribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenS
 
     //icon to point river location
     var riverIcon = L.icon({
-      iconUrl: 'img/river.png',
+      iconUrl: 'img/gradeA1.png',
       iconSize:     [37, 37], // size of the icon
       iconAnchor:   [16, 37] // point of the icon which will correspond to marker's location
     });
