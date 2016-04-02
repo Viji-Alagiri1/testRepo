@@ -23,19 +23,20 @@
 
   <center>
   <div class="page-header">
-  <div class="header">
     <h1>Final Project</h1>      
-  </div><!--close header class-->
-</div><!--close page-header class-->
+  </div><!--close page-header class-->
 </center><!--align header to center of the page-->
 
 
-<!--<div class="container-fluid"> begin the container class-->
 <div class="jumbotron"> <!--begin jumbotron class-->
- <center><h2>My Favorite Restaurant</h2></center>
-  <p><h4>Map rendered with geojson() method with dynamic content popup with Restaurant Grades.</h4></p>
-  <div id="map2" class="map"></div>
-<!--</div>end jumbotron class-->
+ <center>
+  <h2>My Favorite Restaurants</h2>
+  <p>Map rendered with geojson() method with dynamic content popup with Restaurant Grades.</p>
+
+ <!--display Map-->
+ <div id="map2" class="map"></div>
+</center>
+</div><!--end jumbotron class-->
 
 <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
 <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
@@ -44,12 +45,13 @@
 <script src="js/jquery.js"></script>
 <script src="js/script.js"></script>
 
-<div class="row">
-  <hr class="hr-primary" />
-  <div class="col-md-12 blue">
-    <h3>Restaurants Around New York City</h3>
-    <p><h4>Final project includes concepts learned on this short GIS mapping class, that includes creating, managing <mark>GitHub</mark> repositories, utilize Google Fonts features, bootstrap functionalities and render the map with leaflet's geojson() method. In an effort to differentiate places, the dynamic content with popup is displayed with different icons.<h4></p>
-  <p>Attributes: code conepts were taken from multiple sources
+<div class="container">
+  <div class="row">
+    <hr class="hr-primary" />
+      <div class="col-md-12 blue">
+      <h3>Restaurants Around New York City</h3>
+      <p><h4>Final project includes concepts learned on this short GIS mapping class, that includes creating, managing <mark>GitHub</mark> repositories, utilize Google Fonts features, bootstrap functionalities and render the map with leaflet's geojson() method. In an effort to differentiate places, the dynamic content with popup is displayed with different icons.<h4></p>
+      <p>Attributes: code conepts were taken from multiple sources
     <ul><li>Class lectures and fellow classmates sites</li>
       <li><a href="http://www.bootsnipp.com">Bootsnipp</a></li>
       <li><a href="http://www.w3schools.com/bootstrap">W3schools-Bootstrap</a></li>
@@ -60,9 +62,7 @@
     </p><!--end attributes-->
   </div>
 </div><!--end the row class-->
-
-</div> <!--end the container class-->
-
+</div><!--end the container class-->
 
 </body>
 </html>
