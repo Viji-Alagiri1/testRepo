@@ -1,39 +1,32 @@
+.header{
+    z-index: 500;
+    height: 85px;
+    width: 90%;
+    background-color: lightblue;
+    border:1px solid #285a79;
+    font-color: red;
+ }
+
+.header h1{
+    font-size: 20px;
+    color: #285a79;
+}
+
 .jumbotron h1 { 
 		font-family: 'Metrophobic', Arial, serif; 
-		font-weight: 700; 
+		font-weight: 700;
+		font-color: brown;
 }
 
 .jumbotron h2 {
       font-family: 'Metrophobic', Arial, serif; 
       font-weight: 400; 
+      font-color: green;
 }
 
-.header{
-    z-index: 500;
-    height: 85px;
-    width: 90%;
-    background-color: #284c79;
- }
-
-.header h1{
-    font-size: 20px;
-    color: red;
-}
 .map {
-  width: 100%;
+  width: 90%;
   height: 500px;
-  background-color: cream;
-}
-
-img {
-  height: 500px;
-  width: 500px;
-}
-
-.check
-{
-  opacity:0.5;
-  color:#996;
-  
+  background-color: lightblue;
 }
 
