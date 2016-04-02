@@ -6,8 +6,9 @@ var attribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenS
   //initialize map2
   var map2 = L.map('map2', {
     scrollWheelZoom: false
-  }).setView( [40.705107,-73.990860], 10);
+  }).setView( [40.730982,-73.997340], 10);
 
+  
  //CartoDB Basemap
   L.tileLayer(basemapUrl,{
     attribution: attribution
