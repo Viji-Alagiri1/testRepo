@@ -1,7 +1,7 @@
 .header{
     z-index: 500;
     height: 85px;
-    width: 100%;
+    width: 95%;
     background-color: #e6f2ff;
     border:1px solid #007bff;
 }
@@ -22,10 +22,12 @@
       font-weight: 400; 
       font-color: #009933;
 }
-
 .map {
-  width: 90%;
+  width: 100%;
   height: 500px;
-  background-color: lightblue;
 }
 
+.hr-primary{
+  background-image: -webkit-linear-gradient(left, rgba(66,133,244,.8), 
+  rgba(66, 133, 244,.6), rgba(0,0,0,0));
+}
