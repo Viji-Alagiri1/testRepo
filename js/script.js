@@ -54,7 +54,7 @@ var myMapData = [
   //initialize map2
   var map2 = L.map('map2', {
     scrollWheelZoom: false
-  }).setView( [40.747777,-73.956528], 10);//new coord
+  }).setView( [40.718640,-74.014206], 10);//new coord
 
 
   //CartoDB Basemap
