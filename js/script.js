@@ -47,7 +47,7 @@ var myMapData = [
   //initialize map2
   var map2 = L.map('map2', {
     scrollWheelZoom: false
-  }).setView( [40.705107,-73.990860], 12);
+  }).setView( [40.705107,-73.990860], 10);
 
  //CartoDB Basemap
   L.tileLayer(basemapUrl,{
