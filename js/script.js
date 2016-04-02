@@ -1,64 +1,13 @@
-$(document).ready(function(e){
-        $(".img-check").click(function(){
-        $(this).toggleClass("check");
-      });
-  });
-
-var basemapUrl = 'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png';
-var basemapUrl1 = 'http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png';
+var basemapUrl = 'http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png';
 var attribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>';
 
-var myMapData = [
-    {
-      name: "Bronx",
-      coord: [40.8488, -73.8997]
-    },
-    {
-      name: "Manhattan",
-      coord: [40.7503,-73.9802]
-    },
-    {
-      name: "Staten Island",
-      coord: [40.5897, -74.1321]
-    },
-    {
-      name: "Brooklyn",
-      coord: [40.6462,-73.9328]
-    },
-    {
-      name: "Queens",
-      coord: [40.7269, -73.7797]
-    },
-   
-  ]
-  //initialize map1
-  var map1 = L.map('map1', {
-    scrollWheelZoom: false
-  }).setView( [40.758700,-73.859711], 12);
-
-  //CartoDB Basemap
-  L.tileLayer(basemapUrl,{
-    attribution: attribution
-  }).addTo(map1);
-
-  myMapData.forEach(function(element) {
-    var marker = L.marker(element.coord).addTo(map1);
-    marker.bindPopup("You are looking at " + element.name)
-  });
-  
-  var panOptions = {
-    animate: true,
-    duration: 2
-  }
- 
   //initialize map2
   var map2 = L.map('map2', {
     scrollWheelZoom: false
   }).setView( [40.718640,-74.014206], 10);//new coord
 
-
   //CartoDB Basemap
-  L.tileLayer(basemapUrl1,{
+  L.tileLayer(basemapUrl,{
     attribution: attribution
   }).addTo(map2);
 

@@ -20,16 +20,22 @@
 
 </head>
 <body>
+
+  <center>
   <div class="page-header">
   <div class="header">
     <h1>Final Project</h1>      
   </div><!--close header class-->
 </div><!--close page-header class-->
+</center><!--align header to center of the page-->
+
 
 <div class="container-fluid"> <!--begin the container class-->
- <h2>My Favorite Restaurant</h2>
+<div class="jumbotron"> <!--begin jumbotron class-->
+ <center><h2>My Favorite Restaurant</h2></center>
   <p><h4>Map rendered with geojson() method with dynamic content popup with Restaurant Grades.</h4></p>
   <div id="map2" class="map"></div>
+</div><!--end jumbotron class-->
 
 <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
 <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
@@ -54,6 +60,7 @@
     </p><!--end attributes-->
   </div>
 </div><!--end the row class-->
+
 </div> <!--end the container class-->
 
 
