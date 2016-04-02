@@ -11,15 +11,13 @@
 .header{
     z-index: 500;
     height: 85px;
-    width: 100%;
+    width: 90%;
     background-color: #284c79;
-    color: rgb(136, 172, 217);
-}
+ }
 
 .header h1{
     font-size: 20px;
-    text-decoration: none;
-    color: ghostwhite;
+    color: red;
 }
 .map {
   width: 100%;
