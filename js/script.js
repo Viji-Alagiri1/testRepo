@@ -4,7 +4,7 @@ var attribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenS
   //initialize map2
   var map2 = L.map('map2', {
     scrollWheelZoom: false
-  }).setView( [40.718640,-74.014206], 10);//new coord
+  }).setView( [40.723584,-74.013176], 12);//new coord
 
   //CartoDB Basemap
   L.tileLayer(basemapUrl,{
