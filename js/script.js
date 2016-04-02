@@ -1,11 +1,56 @@
 var basemapUrl = 'http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png';
 var attribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>';
 
+var myMapData = [
+    {
+      name: "Bronx",
+      coord: [40.8488, -73.8997]
+    },
+    {
+      name: "Manhattan",
+      coord: [40.7503,-73.9802]
+    },
+    {
+      name: "Staten Island",
+      coord: [40.5897, -74.1321]
+    },
+    {
+      name: "Brooklyn",
+      coord: [40.6462,-73.9328]
+    },
+    {
+      name: "Queens",
+      coord: [40.7269, -73.7797]
+    },
+   
+  ]
+  //initialize map1
+  var map1 = L.map('map1', {
+    scrollWheelZoom: false
+  }).setView( [40.705107,-73.990860], 10);
+
+  //CartoDB Basemap
+  L.tileLayer(basemapUrl,{
+    attribution: attribution
+  }).addTo(map1);
+
+  myMapData.forEach(function(element) {
+    var marker = L.marker(element.coord).addTo(map1);
+    marker.bindPopup("You are looking at " + element.name)
+  });
+  
+  var panOptions = {
+    animate: true,
+    duration: 2
+  }
+ 
   //initialize map2
   var map2 = L.map('map2', {
     scrollWheelZoom: false
-  }).setView( [40.723584,-74.013176], 12);//new coord
+  }).setView( [36.791691,-92.373047], 5);
 
+//37.002553,-94.372559 (US map display)
+//36.791691,-92.373047(new coordinates displays well) 
   //CartoDB Basemap
   L.tileLayer(basemapUrl,{
     attribution: attribution
@@ -19,7 +64,7 @@ var attribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenS
 
     //icon to point river location
     var riverIcon = L.icon({
-      iconUrl: 'img/gradeA.png',
+      iconUrl: 'img/river.png',
       iconSize:     [37, 37], // size of the icon
       iconAnchor:   [16, 37] // point of the icon which will correspond to marker's location
     });
