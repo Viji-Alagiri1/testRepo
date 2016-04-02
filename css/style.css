@@ -1,0 +1,26 @@
+.jumbotron h1 {
+      font-family: 'Raleway', sans-serif;
+}
+
+.jumbotron h2 {
+      font-family: 'Rubik', sans-serif; 
+}
+
+.map {
+  width: 100%;
+  height: 500px;
+  background-color: cream;
+}
+
+img {
+  height: 500px;
+  width: 500px;
+}
+
+.check
+{
+  opacity:0.5;
+  color:#996;
+  
+}
+
