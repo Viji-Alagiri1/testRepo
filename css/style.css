@@ -1,27 +1,26 @@
 .header{
     z-index: 500;
     height: 85px;
-    width: 90%;
-    background-color: lightblue;
-    border:1px solid #285a79;
-    font-color: red;
- }
+    width: 100%;
+    background-color: #e6f2ff;
+    border:1px solid #007bff;
+}
 
 .header h1{
-    font-size: 20px;
+    font-size: 40px;
     color: #285a79;
 }
 
-.jumbotron h1 { 
+.rest h1 { 
 		font-family: 'Metrophobic', Arial, serif; 
 		font-weight: 700;
-		font-color: brown;
+		font-color: #0056b3;
 }
 
-.jumbotron h2 {
+.rest h2 {
       font-family: 'Metrophobic', Arial, serif; 
       font-weight: 400; 
-      font-color: green;
+      font-color: #009933;
 }
 
 .map {
