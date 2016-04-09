@@ -1,56 +1,121 @@
 <!doctype html>
 
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
 
-  <title>New York City Restaurants</title>
-  <meta name="author" content="VijiAlagiri">
+  <title>Grocery Store Locations</title>
+  <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
-  
-  <!-- CartoDB style sheet -->
+
+
+
   <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
 
-  <!-- Google Fonts -->
-  <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,700' rel='stylesheet' type='text/css'>
+<!-- Google fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 
-  <!-- Pretty, custom blueish bootstrap variant: -->
-  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha384-fUMURLTdEcpeYHly3PAwggI3l2UvdHNg/I+8LRph7hLDcAZm77YfDx3Tjum9d3vK" crossorigin="anonymous">
+  <!-- bootswatch -->
+<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cyborg/bootstrap.min.css" rel="stylesheet" integrity="sha384-uSbimwRPo7PKyTL6azsx1CcBce/X9Qg+wX1MAjNV1gAkSXYveZbZeMMyJghdsSol" crossorigin="anonymous">
+
+
+  <style>
+    .jumbotron {
+      font-family:'Raleway', sans-serif;
+    }
+    h3 {
+      font-family: 'Raleway', sans-serif;
+    }
+    #map {
+      height: 500px;
+      color: black;
+    }
+    /*match button color to grocery store color*/
+    .button {
+      background-color: #5CA2D1;
+    }
+  </style>
+
 </head>
 
 <body>
- <div class="page-header">
-    <h1>Final Project</h1>      
+  <div class="container">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">New York City Grocery Stores</a>
+        </div>
+      
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="hhttp://americannutritionassociation.org/newsletter/usda-defines-food-deserts">What is a Food Desert?<span class="sr-only">(current)</span></a></li>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="jumbotron">
+      <h1>New York City Grocery Stores</h1>
+      <p>Access to grocery store and fresh produce is unequal across New York City boroughs. Residents of low-income neighborhoods face many challenges when it comes to the availability of a variety of food options. Explore the map below to discover grocery store locations and poverty rates across the city.</p>
+    </div>
+
+
+    <!--   Buttons for layers  -->
+   <div >
+    <a href="#grocery" id="grocery" class="button grocery btn btn-primary">Grocery Locations</a> 
+    <a href="#poverty" id="poverty" class="button poverty btn btn-primary">Poverty Rate</a> 
+    <a href="#FRESH" id="FRESH" class="button FRESH btn btn-primary">FRESH Incentive Zoning Area</a>
   </div>
 
-  <!-- base Borough map has been removed from display -->
-  <!--<h2>Base Map - Borough Display</h2>
-  <div id="map1" class="map"></div>-->
-
-  <h2>My Favorite Restaurants</h2>
- 
- <!-- Layor toggle button -->
- <div >
-  <a href="#boroughs" id="boroughs" class="button boroughs btn btn-primary">Boroughs</a><a href="#rest" id="rest" class="button rest btn btn-primary">Restaurant</a> 
- </div>
-
-<div id="map2" class="map"></div>
-<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
-<script src ="https://code.jquery.com/jquery-2.2.1.js"></script> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>  
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 
+<div class= "second" id="map"></div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src ="https://code.jquery.com/jquery-2.2.1.js"></script>
+  <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script>
+    
+    var map = new L.map('map').setView([40.730982,-73.997340], 11);
+    L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',{
+     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+    }).addTo(map);
+  var layerURL = 'http://va663.cartodb.com/api/v2/viz/adfb27da-fdba-11e5-8229-0e3ff518bd15/viz.json'
 
-<!--source jquery code -->
-<script src="js/jquery.js"></script>
-<script src="js/script.js"></script>
-
-
-</div> <!--end the container class-->
-
+   cartodb.createLayer(map, layerURL)
+      .addTo(map)
+      .on('done', function(layer) {
+     sublayer = layer.getSubLayer(0);
+     sublayer.hide();
+     sublayer2 = layer.getSubLayer(1);
+     sublayer2.hide();
+     sublayer3 = layer.getSubLayer(2);
+     sublayer3.show();
+  })
+    .on('error', function() {
+    //log the error
+  });
+  $(".button").click(function() {
+      if($(this).attr('id') == 'grocery' ) {
+        sublayer3.show();
+        sublayer.hide();
+        sublayer2.hide();
+      } 
+      if($(this).attr('id') == 'FRESH' ) {
+         sublayer.show();
+        sublayer2.hide();
+        sublayer3.hide();
+      }
+      if($(this).attr('id') == 'poverty' ) {
+         sublayer2.show();
+        sublayer.hide();
+        sublayer3.hide();
+       }
+   });
+  </script>
 </body>
 </html>
