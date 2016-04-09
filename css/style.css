@@ -32,4 +32,6 @@
   font-size: 25px;
   color: #FFFFFF;
 }
-
+.navbar {
+  background-image: linear-gradient(to bottom, #2b6988 0%, #1f4b61 100%);
+}
