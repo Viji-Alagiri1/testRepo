@@ -11,6 +11,10 @@
     width: 90%;
 }
 
+.jumbotron {
+      font-family:'Raleway', sans-serif;
+    }
+
 .jumbotron h1 { 
 		font-family: 'Metrophobic', Arial, serif; 
 		font-weight: 700;
