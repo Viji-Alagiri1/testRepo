@@ -8,9 +8,7 @@
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
 
-
-
-  <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+<link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
 
 <!-- Google fonts -->
   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
@@ -46,21 +44,14 @@
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">New York City Grocery Stores</a>
+          <a class="navbar-brand" href="#">New York City Restaurants</a>
         </div>
-      
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="hhttp://americannutritionassociation.org/newsletter/usda-defines-food-deserts">What is a Food Desert?<span class="sr-only">(current)</span></a></li>
-        </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
 
     <div class="jumbotron">
-      <h1>New York City Grocery Stores</h1>
-      <p>Access to grocery store and fresh produce is unequal across New York City boroughs. Residents of low-income neighborhoods face many challenges when it comes to the availability of a variety of food options. Explore the map below to discover grocery store locations and poverty rates across the city.</p>
+      <h1>New York City Restaurants</h1>
     </div>
 
 
@@ -71,8 +62,6 @@
     <a href="#FRESH" id="FRESH" class="button FRESH btn btn-primary">FRESH Incentive Zoning Area</a>
   </div>
 
-
-
 <div class= "second" id="map"></div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src ="https://code.jquery.com/jquery-2.2.1.js"></script>
@@ -80,15 +69,16 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <script>
     
-    var map = new L.map('map').setView([40.730982,-73.997340], 11);
+    var map = new L.Map('map', {
+    scrollWheelZoom: false
+  }).setView( [40.730982,-73.997340], 10);
+
     L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',{
      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
     }).addTo(map);
-  var layerURL = 'https://dmiketa.cartodb.com/api/v2/viz/ea3e719e-f6b1-11e5-8fce-0ecd1babdde5/viz.json'
+  var layerURL = 'https://va663.cartodb.com/api/v2/viz/eb589bd2-fda9-11e5-a018-0ecfd53eb7d3/viz.json';
 
-  https://va663.cartodb.com/api/v2/viz/eb589bd2-fda9-11e5-a018-0ecfd53eb7d3/viz.json
-
-  
+   
   cartodb.createLayer(map, layerURL)
       .addTo(map)
       .on('done', function(layer) {
