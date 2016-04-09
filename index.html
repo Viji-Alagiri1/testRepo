@@ -1,96 +1,129 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
+  <head profile="http://www.w3.org/2005/10/profile">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="./favicon.ico">
 
-  <title>Grocery Store Locations</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
+    <title>CartoDB Bootstrap Starter Template</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
-  <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+    <link rel="icon" type="image/png" href="./favicon.png">
+  </head>
 
-<!-- Google fonts -->
-  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  <style>
+    html, body, #container {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+    body {
+      padding-top: 50px;
+    }
+    #map {
+      width: auto;
+      height: 100%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.55);
+    }
+    #sidebar {
+      width: 300px;
+      height: 100%;
+      max-width: 100%;
+      float: left;
+      -webkit-transition: all 0.25s ease-out;
+      -moz-transition: all 0.25s ease-out;
+      transition: all 0.25s ease-out;
+    }
+    .navbar .navbar-brand {
+      font-weight: bold;
+      font-size: 25px;
+      color: #FFFFFF;
+    }
+    .navbar {
+      background-image: linear-gradient(to bottom, #2b6988 0%, #1f4b61 100%);
+    }
+    .navbar-inverse .navbar-nav>li>a {
+      color: #fff;
+    }
+  </style>
 
-  <!-- bootswatch -->
-<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cyborg/bootstrap.min.css" rel="stylesheet" integrity="sha384-uSbimwRPo7PKyTL6azsx1CcBce/X9Qg+wX1MAjNV1gAkSXYveZbZeMMyJghdsSol" crossorigin="anonymous">
-</head>
+  <body>
 
-<body>
-  <div class="container">
-    <nav class="navbar navbar-default">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">New York City Grocery Stores</a>
+          <div class="navbar-icon-container">
+            <a href="#" class="navbar-icon pull-right visible-xs" id="nav-btn"><i class="fa fa-bars fa-lg white"></i></a>
+            <a href="#" class="navbar-icon pull-right visible-xs" id="sidebar-toggle-btn"><i class="fa fa-search fa-lg white"></i></a>
+          </div>
+          <a class="navbar-brand" href="#">CartoDB Template</a>
         </div>
-      
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group has-feedback">
+                <span class="twitter-typeahead" style="position: static; display: block; direction: ltr;"><input id="searchbox" type="text" placeholder="Search" class="form-control tt-input" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto;"><div class="tt-dataset-Boroughs"></div><div class="tt-dataset-Theaters"></div><div class="tt-dataset-Museums"></div><div class="tt-dataset-GeoNames"></div></span></span>
+                <span id="searchicon" class="fa fa-search form-control-feedback"></span>
+            </div>
+          </form>
           <ul class="nav navbar-nav">
-            <li class="active"><a href="hhttp://americannutritionassociation.org/newsletter/usda-defines-food-deserts">What is a Food Desert?<span class="sr-only">(current)</span></a></li>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-
-
-    <div class="jumbotron">
-      <h1>New York City Grocery Stores</h1>
+            <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="about-btn"><i class="fa fa-question-circle white"></i>&nbsp;&nbsp;About</a></li>
+            <li class="dropdown">
+              <a id="toolsDrop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-globe white"></i>&nbsp;&nbsp;Tools <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="full-extent-btn"><i class="fa fa-arrows-alt"></i>&nbsp;&nbsp;Zoom To Full Extent</a></li>
+                <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="legend-btn"><i class="fa fa-picture-o"></i>&nbsp;&nbsp;Show Legend</a></li>
+                <li class="divider hidden-xs"></li>
+                <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="login-btn"><i class="fa fa-user"></i>&nbsp;&nbsp;Login</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" id="downloadDrop" href="#" role="button" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-cloud-download white"></i>&nbsp;&nbsp;Download <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="data/boroughs.geojson" download="boroughs.geojson" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Boroughs</a></li>
+                  <li><a href="data/subways.geojson" download="subways.geojson" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Subway Lines</a></li>
+                  <li><a href="data/DOITT_THEATER_01_13SEPT2010.geojson" download="theaters.geojson" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Theaters</a></li>
+                  <li><a href="data/DOITT_MUSEUM_01_13SEPT2010.geojson" download="museums.geojson" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Museums</a></li>
+                </ul>
+            </li>
+            <li class="hidden-xs"><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="list-btn"><i class="fa fa-list white"></i>&nbsp;&nbsp;POI List</a></li>
+          </ul>
+        </div><!--/.navbar-collapse -->
+      </div>
     </div>
 
+    <div id="container">
+      <div id="sidebar">
+        
+      </div>
+      <div id="map">
+      </div>
 
-    <!--   Buttons for layers  -->
-  <div >
-    <a href="#borough" id="borough" class="button borough btn btn-primary">Boroughs</a> 
-    <a href="#rest" id="rest" class="button rest btn btn-primary">Restaurants</a> 
-  </div>
+    </div><!-- /.container -->
 
-
-
-<div class= "second" id="map"></div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script src ="https://code.jquery.com/jquery-2.2.1.js"></script>
-  <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  <script>
-    
-    var map = new L.map('map').setView([40.730982,-73.997340], 11);
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script>
+    var map = new L.Map('map', { 
+      center: [40.1,-100.3],
+      zoom: 4
+    });
     L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',{
-     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
     }).addTo(map);
-
-  var layerURL = 'http://va663.cartodb.com/api/v2/viz/adfb27da-fdba-11e5-8229-0e3ff518bd15/viz.json'
-
-   cartodb.createLayer(map, layerURL)
+    var layerUrl = 'http://documentation.cartodb.com/api/v2/viz/236085de-ea08-11e2-958c-5404a6a683d5/viz.json';
+    cartodb.createLayer(map, layerUrl)
       .addTo(map)
       .on('done', function(layer) {
-     sublayer = layer.getSubLayer(0);
-     sublayer.hide();
-     sublayer2 = layer.getSubLayer(1);
-     sublayer2.show();
-  })
-    .on('error', function() {
-    //log the error
-  });
-
-
-  $(".button").click(function() {
-      if($(this).attr('id') == 'borough' ) {
-        sublayer2.show();
-        sublayer.hide();
-      } 
-      if($(this).attr('id') == 'rest' ) {
-        sublayer.show();
-        sublayer2.hide();
-      }
-
-   });
-
-
-  </script>
-</body>
+      }).on('error', function() {
+        //log the error
+      });
+    </script>
+  </body>
 </html>
