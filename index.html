@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Grocery Store Locations</title>
+  <title>New York City Restaurants</title>
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
 
@@ -44,15 +44,17 @@
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="#">New York City Restaurants</a>
         </div>
+      
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="hhttp://americannutritionassociation.org/newsletter/usda-defines-food-deserts">What is a Food Desert?<span class="sr-only">(current)</span></a></li>
+        </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-
-    <div class="jumbotron">
-      <h1>New York City Restaurants</h1>
-    </div>
 
 
     <!--   Buttons for layers  -->
@@ -76,6 +78,7 @@
     L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',{
      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
     }).addTo(map);
+
   var layerURL = 'https://va663.cartodb.com/api/v2/viz/eb589bd2-fda9-11e5-a018-0ecfd53eb7d3/viz.json';
 
    
