@@ -5,24 +5,21 @@
 <head>
   <meta charset="utf-8">
 
-  <title>New York City</title>
+  <title>New York City Restaurants</title>
   <meta name="author" content="VijiAlagiri">
   <meta name="author" content="SitePoint">
-  <link rel="stylesheet" href="css/style.css">
-
-  <!-- leaflet style sheet -->
-  <link rel='stylesheet' href='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css' />
+  
+  <!-- CartoDB style sheet -->
+  <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
 
   <!-- Google Fonts -->
   <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,700' rel='stylesheet' type='text/css'>
 
-  <!-- Pretty, custom blue-sh bootstrap variant: -->
+  <!-- Pretty, custom blueish bootstrap variant: -->
   <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha384-fUMURLTdEcpeYHly3PAwggI3l2UvdHNg/I+8LRph7hLDcAZm77YfDx3Tjum9d3vK" crossorigin="anonymous">
 </head>
 
 <body>
-<body>
-  
  <div class="page-header">
     <h1>Final Project</h1>      
   </div>
@@ -34,31 +31,26 @@
   <h2>My Favorite Restaurants</h2>
   <p><h4>Map rendered with geojson() method with dynamic content popup on special icons.</h4></p>
 
-  <div id="map2" class="map"></div>
+  <!-- Layor toggle button -->
+ <div >
+  <a href="#boroughs" id="boroughs" class="button boroughs btn btn-primary">Boroughs</a><a href="#rest" id="rest" class="button rest btn btn-primary">Restaurant</a> 
+ </div>
+
+<div id="map2" class="map"></div>
 <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
 <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
-  
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>  
+
+
+
 <!--source jquery code -->
 <script src="js/jquery.js"></script>
 <script src="js/script.js"></script>
 
-<div class="row">
-  <div class="col-md-10 brown">
-    <hr class="hr-primary" />
-    <h3>Restaurants Around New York City</h3>
-      <p><h4>Final project includes concepts learned on this short GIS mapping class, that includes creating, managing <mark>GitHub</mark> repositories, utilize Google Fonts features, bootstrap functionalities and render the map with leaflet's geojson() method. In an effort to differentiate places, the dynamic content with popup is displayed with different icons.<h4></p>
-      <p>Attributes: code conepts were taken from multiple sources
-    <ul><li>Class lectures and fellow classmates sites</li>
-      <li><a href="http://www.bootsnipp.com">Bootsnipp</a></li>
-      <li><a href="http://www.w3schools.com/bootstrap">W3schools-Bootstrap</a></li>
-      <li><a href="http://github.com/ChrisWhong">Chris Whong</a> Learned the concepts from multiple Repos</li>
-      <li><a href="http://chriswhong.github.io/nycSchools">Chris Whong NYC Schools</a>
-      </li>
-      <li><a href="http://thomashe89.github.io/websiteThomas">Thomas</a></li>
-    </p><!--end attributes-->
-  </div>
 
-</div><!--end the row class-->
 </div> <!--end the container class-->
 
 </body>
