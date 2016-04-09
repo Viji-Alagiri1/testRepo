@@ -14,8 +14,8 @@ var layerUrl = 'https://va663.cartodb.com/api/v2/viz/adfb27da-fdba-11e5-8229-0e3
     attribution: attribution
   }).addTo(map2);
 
-   cartodb.createLayer(map, layerUrl)
-      .addTo(map)
+   cartodb.createLayer(map2, layerUrl)
+      .addTo(map2)
       .on('done', function(layer) {
       }).on('error', function() {
         //log the error
