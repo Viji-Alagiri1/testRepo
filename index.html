@@ -54,8 +54,9 @@
 
     <!--   Buttons for layers  -->
    <div >
+    <a href="#borough" id="borough" class="button borough btn btn-primary">NYC Boroughs</a>
     <a href="#poverty" id="poverty" class="button poverty btn btn-primary">Poverty Rate</a> 
-    <a href="#FRESH" id="FRESH" class="button FRESH btn btn-primary">FRESH Incentive Zoning Area</a>
+    
   </div>
 
 <div class= "second" id="map"></div>
@@ -90,7 +91,7 @@
     //log the error
   });
   $(".button").click(function() {
-      if($(this).attr('id') == 'FRESH' ) {
+      if($(this).attr('id') == 'borough' ) {
         sublayer.show();
         sublayer2.hide();
         
