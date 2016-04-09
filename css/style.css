@@ -12,7 +12,7 @@
 }
 
 .jumbotron {
-      font-family:'Raleway', sans-serif;
+      font-family: 'Metrophobic', Arial, serif; 
     }
 
 .jumbotron h1 { 
@@ -29,7 +29,7 @@
 
 .map {
   width: 100%;
-  height: 900px;
+  height: 500px;
 }
 
 .menu {
@@ -41,7 +41,7 @@
     }
 
 .button{
-  background-color: #008B8B;
+  background-color: #0099ff;
 }
 
 .hr-primary{
