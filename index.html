@@ -32,7 +32,7 @@
     }
     /*match button color to grocery store color*/
     .button {
-      background-color: #3a7e89;
+      background-color: #5CA2D1;
     }
   </style>
 
@@ -59,13 +59,14 @@
     </nav>
 
     <div class="jumbotron">
-      <h1>New York City Restaurants</h1>
-      
+      <h1>New York City Grocery Stores</h1>
+      <p>Access to grocery store and fresh produce is unequal across New York City boroughs. Residents of low-income neighborhoods face many challenges when it comes to the availability of a variety of food options. Explore the map below to discover grocery store locations and poverty rates across the city.</p>
     </div>
 
 
     <!--   Buttons for layers  -->
    <div >
+    <a href="#grocery" id="grocery" class="button grocery btn btn-primary">Grocery Locations</a> 
     <a href="#poverty" id="poverty" class="button poverty btn btn-primary">Poverty Rate</a> 
     <a href="#FRESH" id="FRESH" class="button FRESH btn btn-primary">FRESH Incentive Zoning Area</a>
   </div>
@@ -79,35 +80,43 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <script>
     
-   var map = new L.Map('map', {
-    scrollWheelZoom: false
-  }).setView( [40.730982,-73.997340], 12);
-
+    var map = new L.map('map').setView([40.730982,-73.997340], 11);
     L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',{
      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
     }).addTo(map);
-  var layerURL = 'https://va663.cartodb.com/api/v2/viz/eb589bd2-fda9-11e5-a018-0ecfd53eb7d3/viz.json';
+  var layerURL = 'https://dmiketa.cartodb.com/api/v2/viz/ea3e719e-f6b1-11e5-8fce-0ecd1babdde5/viz.json'
 
-    cartodb.createLayer(map, layerURL)
+  https://va663.cartodb.com/api/v2/viz/eb589bd2-fda9-11e5-a018-0ecfd53eb7d3/viz.json
+
+  
+  cartodb.createLayer(map, layerURL)
       .addTo(map)
       .on('done', function(layer) {
      sublayer = layer.getSubLayer(0);
-     sublayer.show();
+     sublayer.hide();
      sublayer2 = layer.getSubLayer(1);
      sublayer2.hide();
-     
+     sublayer3 = layer.getSubLayer(2);
+     sublayer3.show();
   })
     .on('error', function() {
     //log the error
   });
   $(".button").click(function() {
+      if($(this).attr('id') == 'grocery' ) {
+        sublayer3.show();
+        sublayer.hide();
+        sublayer2.hide();
+      } 
       if($(this).attr('id') == 'FRESH' ) {
          sublayer.show();
         sublayer2.hide();
+        sublayer3.hide();
       }
       if($(this).attr('id') == 'poverty' ) {
          sublayer2.show();
         sublayer.hide();
+        sublayer3.hide();
        }
    });
   </script>
