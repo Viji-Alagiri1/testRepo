@@ -48,18 +48,12 @@
           </button>
           <a class="navbar-brand" href="#">New York City Restaurants</a>
         </div>
-      
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="hhttp://americannutritionassociation.org/newsletter/usda-defines-food-deserts">What is a Food Desert?<span class="sr-only">(current)</span></a></li>
-        </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
 
 
     <!--   Buttons for layers  -->
    <div >
-    <a href="#grocery" id="grocery" class="button grocery btn btn-primary">Grocery Locations</a> 
     <a href="#poverty" id="poverty" class="button poverty btn btn-primary">Poverty Rate</a> 
     <a href="#FRESH" id="FRESH" class="button FRESH btn btn-primary">FRESH Incentive Zoning Area</a>
   </div>
@@ -80,38 +74,31 @@
     }).addTo(map);
 
   var layerURL = 'https://va663.cartodb.com/api/v2/viz/adfb27da-fdba-11e5-8229-0e3ff518bd15/viz.json';
-  
+
 //https://va663.cartodb.com/api/v2/viz/adfb27da-fdba-11e5-8229-0e3ff518bd15/viz.json
    
   cartodb.createLayer(map, layerURL)
       .addTo(map)
       .on('done', function(layer) {
      sublayer = layer.getSubLayer(0);
-     sublayer.hide();
+     sublayer.show();
      sublayer2 = layer.getSubLayer(1);
      sublayer2.hide();
-     sublayer3 = layer.getSubLayer(2);
-     sublayer3.show();
+     
   })
     .on('error', function() {
     //log the error
   });
   $(".button").click(function() {
-      if($(this).attr('id') == 'grocery' ) {
-        sublayer3.show();
-        sublayer.hide();
-        sublayer2.hide();
-      } 
       if($(this).attr('id') == 'FRESH' ) {
-         sublayer.show();
+        sublayer.show();
         sublayer2.hide();
-        sublayer3.hide();
+        
       }
       if($(this).attr('id') == 'poverty' ) {
          sublayer2.show();
         sublayer.hide();
-        sublayer3.hide();
-       }
+      }
    });
   </script>
 </body>
