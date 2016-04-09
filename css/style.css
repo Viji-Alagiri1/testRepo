@@ -1,16 +1,3 @@
-.header{
-    height: 60px;
-    width: 95%;
-    background-color: #e6f2ff;
-    border:1px solid #007bff;
-}
-
-.page-header h1{
-    font-size: 40px;
-    color: #285a79;
-    width: 90%;
-}
-
 .jumbotron {
       font-family: 'Metrophobic', Arial, serif; 
     }
@@ -28,17 +15,9 @@
 }
 
 .map {
-  width: 95%;
+  width: 100%;
   height: 500px;
 }
-
-.menu {
-      right: 10px;
-      width: 400px;
-      background: transparent;
-      z-index: 10;
-      float: right;
-    }
 
 .button{
   background-color: #00ffbf;
