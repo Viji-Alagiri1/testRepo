@@ -9,7 +9,6 @@
   
   <title>New York City Restaurants</title>
   <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
-  <link rel='stylesheet' href='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css' />
   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'><!-- Google fonts -->
   <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cyborg/bootstrap.min.css" rel="stylesheet" integrity="sha384-uSbimwRPo7PKyTL6azsx1CcBce/X9Qg+wX1MAjNV1gAkSXYveZbZeMMyJghdsSol" crossorigin="anonymous"> <!-- bootswatch -->
 <link rel="stylesheet" href="css/style.css"><!-- my stylesheet -->
@@ -33,12 +32,6 @@
     </div>
   </div>
 
-<!--Layor control Buttons -->
-<div >
- <a href="#borough" id="borough" class="button borough btn btn-primary">NYC Boroughs</a>
- <a href="#rest" id="rest" class="button rest btn btn-primary">Restaurant</a> 
-</div>
-
 <div id="map" class = "map"></div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src ="https://code.jquery.com/jquery-2.2.1.js"></script>
@@ -47,8 +40,9 @@
 <!--source jquery code -->
 <script src="js/script.js"></script>
 
-<div class="row">
-  <div class="col-md-14 blue">
+<div class="container">
+  <div class="row">
+   <div class="col-md-14 blue">
     <h4>Final Project</h4>
     <p>Final project includes Bootstrap concepts, Google Fonts, along with Map rendered using CartoDB dataset. Toggle button is provided to switch between layers where layer-1 displays the NYC Boroughs and layer-2 displays the Restaurants by grade. Upon hover over the map points, info window will display additional details.</p>
   <p>Attributes: code conepts were taken multiple sources
@@ -58,8 +52,10 @@
       <li><a href="http://github.com/chriswhong">Chris Whong's GitHub site</a>
       <li><a href="http://bmcbride.github.io/bootleaf">McBride's Bootleaf Examples</a>
       </li></p>
-  </div>
-</div><!--end the row class-->
+    </div>
+  </div><!--end the row class-->
+</div><!--end the container class-->
+
 
 </body>
 </html>
