@@ -4,10 +4,9 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Restaurant Grade by Boroughs</title>
+  <title>Grocery Store Locations</title>
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
-  <link rel="stylesheet" href="css/style.css">
 
 
 
@@ -18,6 +17,24 @@
 
   <!-- bootswatch -->
 <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cyborg/bootstrap.min.css" rel="stylesheet" integrity="sha384-uSbimwRPo7PKyTL6azsx1CcBce/X9Qg+wX1MAjNV1gAkSXYveZbZeMMyJghdsSol" crossorigin="anonymous">
+
+
+  <style>
+    .jumbotron {
+      font-family:'Raleway', sans-serif;
+    }
+    h3 {
+      font-family: 'Raleway', sans-serif;
+    }
+    #map {
+      height: 500px;
+      color: black;
+    }
+    /*match button color to grocery store color*/
+    .button {
+      background-color: #3a7e89;
+    }
+  </style>
 
 </head>
 
@@ -42,7 +59,7 @@
     </nav>
 
     <div class="jumbotron">
-      <h1>New York City Grocery Stores</h1>
+      <h1>New York City Restaurants</h1>
       
     </div>
 
@@ -62,21 +79,17 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <script>
     
-    var map = new L.Map('map', {
-    scrollWheelZoom: false
-  }).setView( [40.730982,-73.997340], 10);
-
-
+    var map = new L.map('map').setView([40.730982,-73.997340], 11);
     L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',{
      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
     }).addTo(map);
-  var layerURL = 'http://va663.cartodb.com/api/v2/viz/adfb27da-fdba-11e5-8229-0e3ff518bd15/viz.json';
+  var layerURL = 'https://va663.cartodb.com/api/v2/viz/eb589bd2-fda9-11e5-a018-0ecfd53eb7d3/viz.json'
 
- cartodb.createLayer(map, layerURL)
+    cartodb.createLayer(map, layerURL)
       .addTo(map)
       .on('done', function(layer) {
      sublayer = layer.getSubLayer(0);
-     sublayer.show();
+     sublayer.hide();
      sublayer2 = layer.getSubLayer(1);
      sublayer2.hide();
      
@@ -85,16 +98,13 @@
     //log the error
   });
   $(".button").click(function() {
-      
       if($(this).attr('id') == 'FRESH' ) {
          sublayer.show();
         sublayer2.hide();
-        
       }
       if($(this).attr('id') == 'poverty' ) {
          sublayer2.show();
         sublayer.hide();
-        
        }
    });
   </script>
