@@ -42,13 +42,13 @@
 
     <div class="jumbotron">
       <h1>New York City Grocery Stores</h1>
-      <p>Access to grocery store and fresh produce is unequal across New York City boroughs. Residents of low-income neighborhoods face many challenges when it comes to the availability of a variety of food options. Explore the map below to discover grocery store locations and poverty rates across the city.</p>
+      
     </div>
 
 
     <!--   Buttons for layers  -->
    <div >
-    <a href="#rest" id="rest" class="button rest btn btn-primary">Restaurant Grade</a> 
+    <a href="#poverty" id="poverty" class="button poverty btn btn-primary">Poverty Rate</a> 
     <a href="#FRESH" id="FRESH" class="button FRESH btn btn-primary">FRESH Incentive Zoning Area</a>
   </div>
 
@@ -93,7 +93,7 @@
         sublayer2.hide();
         
       }
-      if($(this).attr('id') == 'rest' ) {
+      if($(this).attr('id') == 'poverty' ) {
          sublayer2.show();
         sublayer.hide();
         
