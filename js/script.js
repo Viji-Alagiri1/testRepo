@@ -1,6 +1,6 @@
 var map = new L.Map('map', {
     scrollWheelZoom: false
-  }).setView( [40.730982,-73.997340], 11);
+  }).setView( [40.705107,-73.990860], 10);
 
     L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',{
      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
