@@ -84,7 +84,7 @@
     scrollWheelZoom: false
   }).setView( [40.730982,-73.997340], 10);
 
-    
+
     L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',{
      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
     }).addTo(map);
@@ -107,20 +107,16 @@
     //log the error
   });
   $(".button").click(function() {
-      if($(this).attr('id') == 'grocery' ) {
-        sublayer3.show();
-        sublayer.hide();
-        sublayer2.hide();
-      } 
+      
       if($(this).attr('id') == 'FRESH' ) {
          sublayer.show();
         sublayer2.hide();
-        sublayer3.hide();
+        
       }
       if($(this).attr('id') == 'poverty' ) {
          sublayer2.show();
         sublayer.hide();
-        sublayer3.hide();
+        
        }
    });
   </script>
